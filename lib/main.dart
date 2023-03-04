@@ -10,7 +10,7 @@ class myCard extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: Text('KARTU MAHASISWA'),
+        title: Text('KARTU TANDA MAHASISWA'),
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 0, // menghapus shadow dari app bar
