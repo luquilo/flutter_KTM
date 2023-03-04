@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      home: myCard(),
+      home: MyCard(),
     ));
 
-class myCard extends StatelessWidget {
+class MyCard extends StatefulWidget {
+  @override
+  State<MyCard> createState() => _MyCardState();
+}
+
+class _MyCardState extends State<MyCard> {
+  int semester = 4;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,13 +64,47 @@ class myCard extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Text('4th',
-                  style: TextStyle(
-                    color: Colors.amberAccent[200],
-                    letterSpacing: 2,
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                  )),
+              Row(
+                children: <Widget>[
+                  Text('$semester th',
+                      style: TextStyle(
+                        color: Colors.amberAccent[200],
+                        letterSpacing: 2,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      )),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {
+                      setState(() {
+                        semester += 1;
+                      });
+                    },
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.black,
+                    ),
+                    backgroundColor: Colors.green[300],
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {
+                      setState(() {
+                        semester -= 1;
+                      });
+                    },
+                    child: Icon(
+                      Icons.remove,
+                      color: Colors.white,
+                    ),
+                    backgroundColor: Colors.red,
+                  )
+                ],
+              ),
               SizedBox(
                 height: 30,
               ),
